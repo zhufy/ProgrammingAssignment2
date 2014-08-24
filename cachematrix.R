@@ -43,27 +43,33 @@
 ##   if the matrix hasn't been calculated its inverse, i will be NULL
 makeCacheMatrix <- function(x = matrix()) {
   
-    i <- NULL
+    i <- NULL 
+    #i indicate inverse, set it NULL at beginning    
     set <- function(y) {
         x <<- y
         i <<- NULL
       }
+    # set can change the target matrix for the current list, like z$set(y)
   get <- function() 
     {
         x
     }
+    #get() can return the matrix from the list
   setinverse <- function(inverse) 
   {
     i <<- inverse
   }
+    #setinverse() can update the cache for the matrix
   getinverse <- function()
   {
     i
   }
+  #getinverse() can return the inversed matrix from the list
   
   list(set = set, get = get,
        setinverse = setinverse,
        getinverse = getinverse)
+  #return the cache-able list represent the matrix
 
 }
 
@@ -79,10 +85,14 @@ makeCacheMatrix <- function(x = matrix()) {
 cacheSolve <- function(x, ...) {
  
     i <- x$getinverse()
+    #if i is not null, get the cache from the list
+    
     if(!is.null(i)){
       message("getting cached data")
       return(i)
     }
+    # Otherwise, calculate the inverse and return every step
+    
     message("The inversed matrix has not been calculated")
     data <- x$get()
     message("Data succesfully loaded")
