@@ -46,6 +46,7 @@ Output:
   [2,]    1 -0.5
   
 input: cacheSolve(z)
+
 Output:
   
   getting cached data
