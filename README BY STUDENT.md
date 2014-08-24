@@ -21,19 +21,36 @@ This document include two functions, which will allow you to make a cache when y
 	
 ## Example
 
-  > y <- matrix(1:4, nrow = 2)
-  > z <- makeCacheMatrix(y)
-  > cacheSolve(z)
+input:y <- matrix(1:4, nrow = 2)
+
+input:z <- makeCacheMatrix(y)
+  
+input: cacheSolve(z)
+
+Output:
+  
   The inversed matrix has not been calculated
+  
   Data succesfully loaded
+  
   Calculating inverse
+  
   Succesfully calculated
+  
   Succesfully Cached
-  [,1] [,2]
+ 
+ 	[,1] [,2]
+  
   [1,]   -2  1.5
+  
   [2,]    1 -0.5
-  > cacheSolve(z)
+  
+input: cacheSolve(z)
+Output:
+  
   getting cached data
+  
   [,1] [,2]
+  
   [1,]   -2  1.5
   [2,]    1 -0.5
